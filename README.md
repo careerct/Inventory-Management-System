@@ -1,22 +1,192 @@
-# InventoryPro - AI-Powered Inventory & Accounts Management System
+# AI-Powered Inventory & Accounts Management System
 
-Professional MERN web application for inventory, purchases, sales, payments, reports and rule-based AI insights, with a structure ready for a Python ML service.
+A full-stack web-based Inventory and Accounts Management System built using the **MERN stack**. The application helps businesses manage products, suppliers, customers, purchases, sales, payments, inventory levels, reports, and intelligent inventory insights from a centralized dashboard.
 
-## Stack
-- React + Vite
-- Node.js + Express
-- MongoDB + Mongoose
-- JWT + bcryptjs
-- Recharts
-- Python/scikit-learn starter AI service files
+The project follows a modular architecture with a React frontend, Node.js/Express backend, MongoDB database, and a Python-based AI module for future machine-learning integration.
 
-## Setup
-1. Install Node.js and MongoDB.
-2. Copy `server/.env.example` to `server/.env` and set your MongoDB URI, JWT secret and admin credentials.
-3. Run `npm run install:all` from the project root.
-4. Run `npm run seed:admin --prefix server`.
-5. Start backend: `npm run dev --prefix server`.
-6. Start frontend: `npm run dev --prefix client`.
-7. Open `http://localhost:5173`.
+---
 
-The database starts empty except for the admin user created by the seed command. No demo products, customers, suppliers, sales or purchases are inserted.
+## 📌 Project Overview
+
+Managing inventory manually can lead to problems such as:
+
+- Incorrect stock calculations
+- Overstocking and understocking
+- Difficulty tracking purchases and sales
+- Poor visibility of customer and supplier transactions
+- Manual payment tracking
+- Difficulty generating reports
+- Lack of data-driven inventory decisions
+
+This system provides a centralized web application to manage these operations digitally.
+
+The application allows authorized users to:
+
+- Manage products and stock
+- Manage suppliers and customers
+- Record purchases
+- Record sales
+- Track payments
+- Monitor low-stock products
+- View business statistics
+- Generate reports
+- Analyze inventory activity
+- Receive intelligent inventory insights
+
+---
+
+# 🚀 Features
+
+## 1. Authentication & Authorization
+
+The application provides secure user authentication using:
+
+- JWT (JSON Web Token)
+- Password hashing with bcrypt
+- Role-based access
+- Protected frontend routes
+- Protected backend APIs
+
+### User Roles
+
+The system supports:
+
+- Admin
+- Staff
+
+Different roles can be given different permissions depending on the application's requirements.
+
+---
+
+# 2. Dashboard
+
+The dashboard provides an overview of the business.
+
+### Dashboard information includes:
+
+- Total Products
+- Total Suppliers
+- Total Customers
+- Total Purchases
+- Total Sales
+- Total Payments
+- Profit summary
+- Low-stock products
+- Inventory statistics
+- Financial information
+- Charts and visual summaries
+
+The dashboard retrieves information from the backend rather than using hardcoded values.
+
+---
+
+# 3. Product Management
+
+Products can be managed from the Products module.
+
+### Product information
+
+Each product can contain:
+
+- Product name
+- SKU
+- Category
+- Description
+- Cost price
+- Selling price
+- Current stock
+- Minimum stock level
+- Unit
+
+### Operations
+
+- Add product
+- Edit product
+- Delete product
+- Search product
+- Filter products
+- Monitor stock
+- Identify low-stock products
+
+---
+
+# 4. Supplier Management
+
+The supplier module stores supplier information.
+
+### Supplier information
+
+- Supplier name
+- Company
+- Email
+- Phone
+- Address
+- Notes
+
+### Operations
+
+- Add supplier
+- Edit supplier
+- Delete supplier
+- Search suppliers
+- View supplier information
+
+---
+
+# 5. Customer Management
+
+The customer module manages customer information.
+
+### Customer information
+
+- Customer name
+- Email
+- Phone
+- Address
+- Notes
+
+### Operations
+
+- Add customer
+- Edit customer
+- Delete customer
+- Search customers
+- View customer information
+
+---
+
+# 6. Purchase Management
+
+The Purchase module records purchases made from suppliers.
+
+A purchase can contain multiple products.
+
+### Purchase information
+
+- Supplier
+- Products
+- Quantity
+- Unit cost
+- Total amount
+- Paid amount
+- Payment status
+- Invoice number
+- Purchase date
+- Notes
+
+### Payment statuses
+
+- Paid
+- Partial
+- Pending
+
+### Inventory behavior
+
+When a purchase is recorded:
+
+```text
+Purchase
+   ↓
+Product quantity increases
+   ↓
+Inventory stock updated
