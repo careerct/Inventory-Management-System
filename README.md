@@ -1,16 +1,22 @@
-# React + Vite
+# InventoryPro - AI-Powered Inventory & Accounts Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Professional MERN web application for inventory, purchases, sales, payments, reports and rule-based AI insights, with a structure ready for a Python ML service.
 
-Currently, two official plugins are available:
+## Stack
+- React + Vite
+- Node.js + Express
+- MongoDB + Mongoose
+- JWT + bcryptjs
+- Recharts
+- Python/scikit-learn starter AI service files
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Setup
+1. Install Node.js and MongoDB.
+2. Copy `server/.env.example` to `server/.env` and set your MongoDB URI, JWT secret and admin credentials.
+3. Run `npm run install:all` from the project root.
+4. Run `npm run seed:admin --prefix server`.
+5. Start backend: `npm run dev --prefix server`.
+6. Start frontend: `npm run dev --prefix client`.
+7. Open `http://localhost:5173`.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The database starts empty except for the admin user created by the seed command. No demo products, customers, suppliers, sales or purchases are inserted.

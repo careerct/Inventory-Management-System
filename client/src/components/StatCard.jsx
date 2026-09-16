@@ -1,0 +1,1 @@
+export default function StatCard({ title, value, description, icon }) { return <div className="stat-card"><div className="stat-card-header"><div><div className="stat-card-title">{title}</div><div className="stat-card-value">{value}</div></div><div className="stat-card-icon">{icon}</div></div><div className="stat-card-description">{description}</div></div>; }
